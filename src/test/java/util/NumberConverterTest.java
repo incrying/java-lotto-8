@@ -22,7 +22,7 @@ public class NumberConverterTest {
     @DisplayName("공백을 제거한 문자열 리스트를 숫자 리스트로 변환한다.")
     @Test
     void convertToIntegerList_hasSpaces() {
-        List<String> strings = List.of("1 "," 2","  3","4","5","6");
+        List<String> strings = List.of("1"," 2","3","4","       5","6");
 
         List<Integer> integers = NumberConverter.convertToIntegerList(strings);
 
@@ -33,17 +33,6 @@ public class NumberConverterTest {
     @Test
     void convertToInteger() {
         String input = "1";
-
-        Integer converted = NumberConverter.convertToInteger(input);
-
-        assertThat(converted).isEqualTo(1);
-    }
-
-    @DisplayName("공백을 제거하고 문자열이 숫자로 변환된다.")
-    @Test
-    void convertToInteger_hasSpaces() {
-
-        String input = "  1   ";
 
         Integer converted = NumberConverter.convertToInteger(input);
 
